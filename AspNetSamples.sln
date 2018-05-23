@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstSignalR", "FirstSignalR\FirstSignalR.csproj", "{7DEA1188-5FAE-4C30-B589-7FEC6B33A84B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstSignalR", "FirstSignalR\FirstSignalR.csproj", "{7DEA1188-5FAE-4C30-B589-7FEC6B33A84B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessagePackWebApi", "MessagePackWebApi\MessagePackWebApi.csproj", "{1CA9D87D-F8DC-4599-9904-024847CFAEAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{A35E6963-5CFD-417A-9AB1-289BB86F8FB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{7DEA1188-5FAE-4C30-B589-7FEC6B33A84B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DEA1188-5FAE-4C30-B589-7FEC6B33A84B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DEA1188-5FAE-4C30-B589-7FEC6B33A84B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CA9D87D-F8DC-4599-9904-024847CFAEAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CA9D87D-F8DC-4599-9904-024847CFAEAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CA9D87D-F8DC-4599-9904-024847CFAEAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CA9D87D-F8DC-4599-9904-024847CFAEAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A35E6963-5CFD-417A-9AB1-289BB86F8FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A35E6963-5CFD-417A-9AB1-289BB86F8FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A35E6963-5CFD-417A-9AB1-289BB86F8FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A35E6963-5CFD-417A-9AB1-289BB86F8FB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
