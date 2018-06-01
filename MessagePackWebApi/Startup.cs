@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using WebApiComponents.Extensions.DependencyInjection.MsgPack;
 
 namespace MessagePackWebApi
 {
@@ -27,8 +28,11 @@ namespace MessagePackWebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton<IProcessProvider, InMemoryProcessProvider>();
+            services.AddSingleton<IProductsProvider, InMemoryProductProvider>();
+            services.AddMvc()
+                    .AddMessagePack((options)=> options.AddResolver(Models.Formatters.ModelsFormatterResolver.Instance));
+          
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
