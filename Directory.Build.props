@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+    <MicrosoftNETCoreApp21PackageVersion>2.1.0</MicrosoftNETCoreApp21PackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <DotNetCoreRuntime Include="$(MicrosoftNETCoreApp21PackageVersion)" />
+  </ItemGroup>
+</Project>
