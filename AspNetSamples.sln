@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "Contracts\Cont
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiComponents", "WebApiComponents\WebApiComponents.csproj", "{EB5789FC-24DE-4B58-9EC6-312BE8A91F37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessagePackClientApp", "MessagePackClientApp\MessagePackClientApp.csproj", "{E3F32DE8-C6FF-41CB-AE78-7317CC06020D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiTests", "WebApiTests\WebApiTests.csproj", "{07DD72EC-AC00-4EA5-96F4-652E150F1BEE}"
 EndProject
 Global
@@ -43,10 +41,6 @@ Global
 		{EB5789FC-24DE-4B58-9EC6-312BE8A91F37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB5789FC-24DE-4B58-9EC6-312BE8A91F37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB5789FC-24DE-4B58-9EC6-312BE8A91F37}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E3F32DE8-C6FF-41CB-AE78-7317CC06020D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E3F32DE8-C6FF-41CB-AE78-7317CC06020D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E3F32DE8-C6FF-41CB-AE78-7317CC06020D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E3F32DE8-C6FF-41CB-AE78-7317CC06020D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{07DD72EC-AC00-4EA5-96F4-652E150F1BEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{07DD72EC-AC00-4EA5-96F4-652E150F1BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07DD72EC-AC00-4EA5-96F4-652E150F1BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
