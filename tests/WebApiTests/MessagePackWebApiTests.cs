@@ -22,9 +22,9 @@ namespace WebApiTests
             var options = new Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions()
             {
                  BaseAddress = new Uri("http://localhost"),
-                  AllowAutoRedirect = false,
-                   HandleCookies = false,
-                    MaxAutomaticRedirections = 0
+                AllowAutoRedirect = false,
+                HandleCookies = false,
+                MaxAutomaticRedirections = 0
 
             };
 
@@ -66,14 +66,25 @@ namespace WebApiTests
             DefaultFormatterResolver.Add(Models.Formatters.ModelsFormatterResolver.Instance);
 
             
-            byte[] bytes = MessagePackSerializer.Serialize(product, DefaultFormatterResolver.Instance);
-            File.WriteAllBytes(testsFolder+"\\product.dat", bytes);
-            string bytesOnstr = String.Join(",", bytes);
-            client.DefaultRequestHeaders.Add("Accept", "application/msg-pack");
+              client.DefaultRequestHeaders.Add("Accept", "application/msg-pack");
             var response = await client.PostAsync("api/product", new MessagePackContent<Product>(product, DefaultFormatterResolver.Instance));
           
             Assert.Equal(HttpStatusCode.Created, response.StatusCode);
             
+        }
+
+
+        [Fact]
+        public async Task GetProduct()
+        {
+             
+         
+            client.DefaultRequestHeaders.Add("Accept", "application/msg-pack");
+            var response = await client.GetAsync("api/product/199999",HttpCompletionOption.ResponseContentRead);
+
+             
+            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+
         }
     }
 }

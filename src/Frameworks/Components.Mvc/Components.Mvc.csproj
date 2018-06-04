@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<PackageId>Serialization.MessagePack</PackageId>
-		<Description>Support to Message Pack serialization on aspnet core</Description>
+		<PackageId>Components.Mvc</PackageId>
 		<VersionPrefix>1.0.0</VersionPrefix>
 		<TargetFramework>netstandard2.0</TargetFramework>
+		<Description>Support to Message Pack Input and output formatters on aspnet core</Description>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Authors>Vitor Paulino</Authors>
 		
-		<PackageTags>dotnet aspnetcore Messagepack</PackageTags>
+		<PackageTags>dotnet aspnetcore Mvc Messagepack</PackageTags>
 	</PropertyGroup>
 	
 

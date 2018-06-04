@@ -11,7 +11,9 @@ const string TESTER_SERVICE_INTEGRATION_TESTS = "integration-tester";
 
 var PROJECTS_TO_PACK = new List<string>
 {
-    "MessagePackWebApi",
+    "Components.Mvc",
+	 "Components.MsgPack",
+	 "Components.Http"
 };
 
 //////////////////////////////////////////////////////////////////////
@@ -34,6 +36,7 @@ var solutionName = "AspNetSamples.sln";
 // Define directories.
 var outputDir = Directory("Output/");
 var artifactsDir = outputDir + Directory("Artifacts/");
+var distDirectory = outputDir + Directory("Dist/");
 var nugetPackagesDir = artifactsDir + Directory("NuGets/");
 var preReleaseNugetPackagesDir = nugetPackagesDir + Directory("PreRelease/");
 var releaseNugetPackagesDir = nugetPackagesDir + Directory("Release/");
@@ -124,13 +127,26 @@ Task("Run-Unit-Tests")
          
     });
  
+ Task("PublishApplications")  
+    .Does(() =>
+    {
+        DotNetCorePublish(
+            "./src/Applicational/ApplicationApi/ApplicationApi.csproj",
+            new DotNetCorePublishSettings()
+            {
+                Configuration = configuration,
+                OutputDirectory = distDirectory + "/ApplicationApi/",
+                ArgumentCustomization = args => args.Append("--no-restore"),
+            });
+    });
 
 //////////////////////////////////////////////////////////////////////
 // TASK TARGETS
 //////////////////////////////////////////////////////////////////////
 Task("Full-Build")
     .IsDependentOn("Build-AND-Test")
-    .IsDependentOn("NugetPack");
+    .IsDependentOn("NugetPack")
+	.IsDependentOn("PublishApplications");
 
 Task("Build-AND-Test")
     .IsDependentOn("Build")
