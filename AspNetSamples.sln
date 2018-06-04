@@ -3,17 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstSignalR", "FirstSignalR\FirstSignalR.csproj", "{7DEA1188-5FAE-4C30-B589-7FEC6B33A84B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstSignalR", "src\FirstSignalR\FirstSignalR.csproj", "{7DEA1188-5FAE-4C30-B589-7FEC6B33A84B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessagePackWebApi", "MessagePackWebApi\MessagePackWebApi.csproj", "{1CA9D87D-F8DC-4599-9904-024847CFAEAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessagePackWebApi", "src\MessagePackWebApi\MessagePackWebApi.csproj", "{1CA9D87D-F8DC-4599-9904-024847CFAEAD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{A35E6963-5CFD-417A-9AB1-289BB86F8FB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "src\Models\Models.csproj", "{A35E6963-5CFD-417A-9AB1-289BB86F8FB1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "Contracts\Contracts.csproj", "{D879FE50-3118-423D-9EE4-C3B318BFAE73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "src\Contracts\Contracts.csproj", "{D879FE50-3118-423D-9EE4-C3B318BFAE73}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiComponents", "WebApiComponents\WebApiComponents.csproj", "{EB5789FC-24DE-4B58-9EC6-312BE8A91F37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiComponents", "src\WebApiComponents\WebApiComponents.csproj", "{EB5789FC-24DE-4B58-9EC6-312BE8A91F37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiTests", "WebApiTests\WebApiTests.csproj", "{07DD72EC-AC00-4EA5-96F4-652E150F1BEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiTests", "tests\WebApiTests\WebApiTests.csproj", "{07DD72EC-AC00-4EA5-96F4-652E150F1BEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EAF217B2-BA37-435F-868D-9F7FDF622B7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{ABF3ED3B-2C34-45F9-B6CA-928776579856}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +52,14 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7DEA1188-5FAE-4C30-B589-7FEC6B33A84B} = {EAF217B2-BA37-435F-868D-9F7FDF622B7B}
+		{1CA9D87D-F8DC-4599-9904-024847CFAEAD} = {EAF217B2-BA37-435F-868D-9F7FDF622B7B}
+		{A35E6963-5CFD-417A-9AB1-289BB86F8FB1} = {EAF217B2-BA37-435F-868D-9F7FDF622B7B}
+		{D879FE50-3118-423D-9EE4-C3B318BFAE73} = {EAF217B2-BA37-435F-868D-9F7FDF622B7B}
+		{EB5789FC-24DE-4B58-9EC6-312BE8A91F37} = {EAF217B2-BA37-435F-868D-9F7FDF622B7B}
+		{07DD72EC-AC00-4EA5-96F4-652E150F1BEE} = {ABF3ED3B-2C34-45F9-B6CA-928776579856}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3FD3675D-4AA9-4FFA-94D3-1CA617269635}
