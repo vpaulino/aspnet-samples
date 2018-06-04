@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageId>Serialization.MessagePack</PackageId>
+		<Description>Support to Message Pack serialization on aspnet core</Description>
+		<VersionPrefix>1.0.0</VersionPrefix>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Authors>Vitor Paulino</Authors>
+		
+		<PackageTags>dotnet aspnetcore Messagepack</PackageTags>
+	</PropertyGroup>
+	
+
+  <ItemGroup>
+    <PackageReference Include="MessagePack" Version="1.7.3.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.1.0" />
+  </ItemGroup>
+	
+
+  <ItemGroup>
+    <ProjectReference Include="..\Components.MsgPack\Components.MsgPack.csproj" />
+  </ItemGroup>
+
+</Project>

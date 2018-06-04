@@ -25,7 +25,7 @@ var buildNumber =  Argument<int>("buildNumber",0);
 var versionSufix = "1.0.0";
 var pre = HasArgument("pre");
 var sourcePath = Argument<string>("sourcePath","./src");
-var solutionName = "Abstractions.sln";
+var solutionName = "AspNetSamples.sln";
 
 //////////////////////////////////////////////////////////////////////
 // PREPARATION

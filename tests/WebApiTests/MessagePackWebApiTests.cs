@@ -5,11 +5,10 @@ using System.Net;
 using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
+using Components.Http;
+using Components.MsgPack;
 using MessagePack;
-using Models;
-using WebApiComponents;
-using WebApiComponents.MsgPack;
-using WebApiComponents.MsgPack.Http;
+using Models; 
 using Xunit;
 
 namespace WebApiTests

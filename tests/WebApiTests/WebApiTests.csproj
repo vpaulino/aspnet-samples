@@ -29,8 +29,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MessagePackWebApi\MessagePackWebApi.csproj" />
-    <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\..\src\Applicational\ApplicationApi\ApplicationApi.csproj" />
+    <ProjectReference Include="..\..\src\Applicational\Models\Models.csproj" />
+    <ProjectReference Include="..\..\src\Frameworks\Components.Http\Components.Http.csproj" />
+    <ProjectReference Include="..\..\src\Frameworks\Components.MsgPack\Components.MsgPack.csproj" />
+    <ProjectReference Include="..\..\src\Frameworks\Components.Mvc\Components.Mvc.csproj" />
   </ItemGroup>
 
 </Project>
