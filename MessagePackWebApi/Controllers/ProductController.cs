@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Contracts;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 
@@ -15,7 +12,6 @@ namespace MessagePackWebApi.Controllers
     public class ProductController : ControllerBase
     {
         IProductsProvider productsProvider;
-
 
         public ProductController(IProductsProvider provider)
         {
@@ -29,7 +25,9 @@ namespace MessagePackWebApi.Controllers
             if (!result)
                 return Conflict();
 
-            return Created(UrlHelperExtensions.Action(Url, "GetProduct"), product);
+            var createdAt = Url.RouteUrl(routeName: "GetProduct", values: new { id = product.Id });
+
+            return Created(createdAt, product);
         }
         [HttpGet("{id}", Name = "GetProduct")]
         public async Task<IActionResult> Get(long id)
