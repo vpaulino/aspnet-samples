@@ -135,7 +135,16 @@ Task("Run-Unit-Tests")
             new DotNetCorePublishSettings()
             {
                 Configuration = configuration,
-                OutputDirectory = distDirectory + "/ApplicationApi/",
+                OutputDirectory = distDirectory + Directory("ApplicationApi/"),
+                ArgumentCustomization = args => args.Append("--no-restore"),
+            });
+
+			 DotNetCorePublish(
+            "./src/Applicational/FirstSignalR/FirstSignalR.csproj",
+            new DotNetCorePublishSettings()
+            {
+                Configuration = configuration,
+                OutputDirectory = distDirectory + Directory("FirstSignalR/"),
                 ArgumentCustomization = args => args.Append("--no-restore"),
             });
     });

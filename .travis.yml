@@ -1,4 +1,6 @@
 language: csharp
+services:
+    'docker'
 branches:
   only:
     - master
@@ -17,3 +19,8 @@ env:
   - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true DOTNET_CLI_TELEMETRY_OPTOUT=true
 script:
   - ./build.sh -t TravisCI
+
+  #after_success:
+  #if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+  #    docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD ;
+  #    make push-image ;

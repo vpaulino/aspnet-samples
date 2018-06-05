@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace MessagePackWebApi
 {
@@ -32,12 +33,21 @@ namespace MessagePackWebApi
             services.AddSingleton<IProductsProvider, InMemoryProductProvider>();
             services.AddMvc()
                     .AddMessagePack((options)=> options.AddResolver(Models.Formatters.ModelsFormatterResolver.Instance));
-          
+
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "Asp.net Core Samples", Version = "v1" });
+            });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseSwagger();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -48,7 +58,15 @@ namespace MessagePackWebApi
             }
 
             app.UseHttpsRedirection();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Asp.net Core  Samples API");
+            });
+
             app.UseMvc();
+ 
+
         }
     }
 }
