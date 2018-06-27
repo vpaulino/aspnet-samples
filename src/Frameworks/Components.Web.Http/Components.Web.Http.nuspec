@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>1</id>
+    <version>0.1.0</version>
+    <title>Components.Web.Http</title>
+    <authors>Vitor Paulino</authors>
+    <owners>Vitor Paulino</owners>
+    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This nuget contains a set of components to replace on your webapi project to performance improvements or to customize somekind of operation</description>
+    <releaseNotes>In this release we make available validation service to aspnet webapi</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>asp.net owin http, ModelValidation</tags>
+  </metadata>
+</package>

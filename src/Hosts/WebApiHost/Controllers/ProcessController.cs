@@ -22,23 +22,23 @@ namespace WebApiHost.Controllers
         
         
 
-        protected override void Initialize(HttpControllerContext controllerContext)
-        {
-            try
-            {
-                var defaultModelValidator = controllerContext.Configuration.Services.GetBodyModelValidator();
-                //controllerContext.Configuration.Services.Clear(typeof(IBodyModelValidator));
-                controllerContext.Configuration.Services.Replace(typeof(IBodyModelValidator), new CustomModelValidator());
+        //protected override void Initialize(HttpControllerContext controllerContext)
+        //{
+        //    try
+        //    {
+        //        var defaultModelValidator = controllerContext.Configuration.Services.GetBodyModelValidator();
+        //        //controllerContext.Configuration.Services.Clear(typeof(IBodyModelValidator));
+        //        controllerContext.Configuration.Services.Replace(typeof(IBodyModelValidator), new CustomModelValidator());
 
                 
-            }
-            catch (Exception ex)
-            {
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                throw;
-            }
+        //        throw;
+        //    }
            
-        }
+        //}
 
         public override async Task<HttpResponseMessage> ExecuteAsync(HttpControllerContext controllerContext, CancellationToken cancellationToken)
         {

@@ -109,7 +109,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ModelValidator\CustomModelValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -119,6 +118,10 @@
     <ProjectReference Include="..\..\Applicational\Contracts\Contracts.csproj">
       <Project>{759b36cb-95ed-4a22-9660-c9473e3a079b}</Project>
       <Name>Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Frameworks\Components.Web.Http\Components.Web.Http.csproj">
+      <Project>{94520a56-d519-45ee-bbbf-f6cf1afc8e94}</Project>
+      <Name>Components.Web.Http</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

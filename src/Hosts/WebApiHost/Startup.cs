@@ -6,11 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Routing;
+using System.Web.Http.Validation;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Owin;
 using WebApiHost.Controllers;
-
+using Components.Web.Http.Validation;
 
 namespace WebApiHost
 {
@@ -28,7 +29,8 @@ namespace WebApiHost
             ConfigureFormatters(config);
             ConfiguringRoutes(this.Resource, config);
             ConfigureTracing(config);
-             
+
+            config.Services.Replace(typeof(IBodyModelValidator), new PolicyBasedObjectModelValidator(new InheritanceModelValidationPolicy(typeof(object))));
             appBuilder.UseWebApi(config);
         }
 
