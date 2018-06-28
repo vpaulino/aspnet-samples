@@ -98,11 +98,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnalysisEngineControllerClient.cs" />
-    <Compile Include="ConsoleTraceSource.cs" />
+    <Compile Include="ProcessControllerClient.cs" />
     <Compile Include="Models\ClearProcessRequest.cs" />
     <Compile Include="Controllers\ProcessController.cs" />
-    <Compile Include="Middlewares\LoggingMiddleware.cs" />
     <Compile Include="Models\EvaluateRequest.cs" />
     <Compile Include="Models\ProcessResult.cs" />
     <Compile Include="Models\ProcessRequest.cs" />
@@ -113,16 +111,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Applicational\Contracts\Contracts.csproj">
-      <Project>{759b36cb-95ed-4a22-9660-c9473e3a079b}</Project>
-      <Name>Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Frameworks\Components.Web.Http\Components.Web.Http.csproj">
-      <Project>{94520a56-d519-45ee-bbbf-f6cf1afc8e94}</Project>
-      <Name>Components.Web.Http</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
@@ -136,8 +124,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="MediaFormatters\" />
+    <ProjectReference Include="..\..\Libraries\Components.Web.Http\Components.Web.Http.csproj">
+      <Project>{7cb20550-e3e9-41dd-98b9-c97c8f8e0a23}</Project>
+      <Name>Components.Web.Http</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

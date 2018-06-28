@@ -29,9 +29,14 @@ namespace WebApiHost
             ConfigureFormatters(config);
             ConfiguringRoutes(this.Resource, config);
             ConfigureTracing(config);
-
-            config.Services.Replace(typeof(IBodyModelValidator), new PolicyBasedObjectModelValidator(new InheritanceModelValidationPolicy(typeof(object))));
+            ConfigureModelValidation(config);
+            
             appBuilder.UseWebApi(config);
+        }
+
+        public static  void ConfigureModelValidation(HttpConfiguration config)
+        {
+            config.Services.Replace(typeof(IBodyModelValidator), new PolicyBasedObjectModelValidator(new InheritanceModelValidationPolicy(typeof(object))));
         }
 
         public static void ConfigureTracing(HttpConfiguration config)

@@ -6,7 +6,6 @@ using System.Web.Http;
 using Microsoft.Owin.Hosting;
 using Owin;
 
-using WebApiHost.Middlewares;
 
 namespace WebApiHost
 {
@@ -31,7 +30,7 @@ namespace WebApiHost
 
         private static void SetupClients(string baseAddress1)
         {
-            var client1 = new AnalysisEngineControllerClient(baseAddress1);
+            var client1 = new ProcessControllerClient(baseAddress1);
             
             actions.Add("1", () => client1.IdentifyRequest());
             

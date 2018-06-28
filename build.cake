@@ -75,7 +75,7 @@ Task("Build")
     });
     
 Task("NugetPack")
- .DoesForEach(GetFiles($"{sourcePath}/**/*.csproj"), (file) => 
+ .DoesForEach(GetFiles($"./src/Libraries/**/*.csproj"), (file) => 
     {
             var versionXPath = "/Project/PropertyGroup/VersionPrefix";
 
@@ -127,35 +127,14 @@ Task("Run-Unit-Tests")
          
     });
  
- Task("PublishApplications")  
-    .Does(() =>
-    {
-        DotNetCorePublish(
-            "./src/Applicational/ApplicationApi/ApplicationApi.csproj",
-            new DotNetCorePublishSettings()
-            {
-                Configuration = configuration,
-                OutputDirectory = distDirectory + Directory("ApplicationApi/"),
-                ArgumentCustomization = args => args.Append("--no-restore"),
-            });
-
-			 DotNetCorePublish(
-            "./src/Applicational/FirstSignalR/FirstSignalR.csproj",
-            new DotNetCorePublishSettings()
-            {
-                Configuration = configuration,
-                OutputDirectory = distDirectory + Directory("FirstSignalR/"),
-                ArgumentCustomization = args => args.Append("--no-restore"),
-            });
-    });
 
 //////////////////////////////////////////////////////////////////////
 // TASK TARGETS
 //////////////////////////////////////////////////////////////////////
 Task("Full-Build")
     .IsDependentOn("Build-AND-Test")
-    .IsDependentOn("NugetPack")
-	.IsDependentOn("PublishApplications");
+    .IsDependentOn("NugetPack");
+	
 
 Task("Build-AND-Test")
     .IsDependentOn("Build")
