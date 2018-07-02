@@ -69,7 +69,8 @@ namespace Components.Web.Http.Middlewares.Logging
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Logging middleware: ex:{ex}");
+                await context.TraceOutput.WriteAsync($"Logging MetricsMiddleware: ex:{ex}");
+                
             }
             finally
             {
