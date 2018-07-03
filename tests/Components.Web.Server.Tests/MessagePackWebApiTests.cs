@@ -14,12 +14,16 @@ using Xunit;
 using Components.Web.Server.Tests.Owin;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Components.Web.Server.Tests.Models;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore;
 
 namespace Components.Web.Server.Tests
 {
 
     public class MessagePackWebApiTests : IClassFixture<WebApiHostFactory<Startup>>
     {
+
+       
 
         HttpClient client;
         public MessagePackWebApiTests(WebApiHostFactory<Startup> factory)

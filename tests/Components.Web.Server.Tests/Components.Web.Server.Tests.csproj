@@ -30,7 +30,16 @@
     <ProjectReference Include="..\..\src\Libraries\Components.MsgPack\Components.MsgPack.csproj" />
     <ProjectReference Include="..\..\src\Libraries\Components.Web.Extensions\Components.Web.Extensions.csproj" />
   </ItemGroup>
-	 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="2.1.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.0" />
+    <PackageReference Include="Moq" Version="4.8.2" />
+
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.analyzers" Version="0.8.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
+  </ItemGroup>
   <ItemGroup>
     <None Update="laptopImage.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

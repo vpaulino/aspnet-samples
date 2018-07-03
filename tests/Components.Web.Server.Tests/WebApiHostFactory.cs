@@ -4,9 +4,10 @@ using System.Text;
 
 #if NETCORE
 using Components.Web.Server.Tests.Owin;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
-
+using Microsoft.AspNetCore.TestHost;
 
 namespace Components.Web.Server.Tests
 {
@@ -14,7 +15,17 @@ namespace Components.Web.Server.Tests
     {
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
-            base.ConfigureWebHost(builder);
+            builder.ConfigureServices(services =>
+            {
+                //builder.UseSolutionRelativeContentRoot("../");
+                builder.UseContentRoot("./");
+            });
+        }
+
+
+        protected override IWebHostBuilder CreateWebHostBuilder()
+        {
+            return WebHost.CreateDefaultBuilder(new string[0]).UseStartup<Startup>();
         }
 
 

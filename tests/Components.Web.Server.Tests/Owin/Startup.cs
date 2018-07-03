@@ -29,9 +29,7 @@ namespace Components.Web.Server.Tests.Owin
             services.AddSingleton<IProductsProvider, InMemoryProductProvider>();
             services.AddMvc()
                     .AddMessagePack((options) => options.AddResolver(Models.Formatters.ModelsFormatterResolver.Instance));
-
-            // Register the Swagger generator, defining 1 or more Swagger documents
-           
+            
 
         }
 

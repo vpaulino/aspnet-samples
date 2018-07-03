@@ -1,5 +1,5 @@
 ﻿
-
+#if NET46
 using System.Net.Http;
 using System.Web.Http;
 using Components.Web.Http.Tests.Models;
@@ -35,3 +35,4 @@ namespace Components.Web.Http.Tests
         }
     }
 }
+#endif

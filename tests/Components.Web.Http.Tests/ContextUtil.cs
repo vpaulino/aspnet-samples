@@ -1,4 +1,4 @@
-﻿
+﻿#if NET46
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -71,3 +71,4 @@ namespace Components.Web.Http.Tests
         }
     }
 }
+#endif
