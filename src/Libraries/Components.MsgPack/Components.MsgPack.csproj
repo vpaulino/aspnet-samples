@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Components.MsgPack</AssemblyName>
+	<VersionPrefix>1.0.0</VersionPrefix>
+    <RootNamespace>Components.MsgPack</RootNamespace>
+
+	  <PackageTags>dotnet Messagepack</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MessagePack" Version="1.7.3.4" />
+  </ItemGroup>
+
+</Project>

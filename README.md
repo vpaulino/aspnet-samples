@@ -1,2 +1,2 @@
 # aspnet-samples
-this repository contains samples using of aspnet core features such as signalR webapi and mvc
+this repository contains samples using of aspnet 5 features such as webapi and mvc

@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageId>Components.Web.Http</PackageId>
+		<PackageVersion>1.0.0</PackageVersion>
+		<Authors>Vítor Paulino</Authors>
+		<Description>Web Http Services components </Description>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PackageReleaseNotes>First release</PackageReleaseNotes>
+		<PackageTags>Http aspnet</PackageTags>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<DefineConstants Condition=" '$(TargetFramework)' == 'net462' ">NET46</DefineConstants>
+		<DefineConstants Condition=" '$(TargetFramework)' == 'netstandard2.0' ">NETSTD20</DefineConstants>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	</PropertyGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
+		<Reference Include="System" />
+		<PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.6" />
+		<PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.6" />
+		<PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="4.0.0" />
+	</ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+	 	<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.1.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+	  <PackageReference Include="MessagePack" Version="1.7.3.4" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\Components.Metrics\Components.Metrics.csproj" />
+	  <ProjectReference Include="..\Components.MsgPack\Components.MsgPack.csproj" />
+	</ItemGroup>
+
+</Project>
