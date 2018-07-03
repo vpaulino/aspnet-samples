@@ -18,7 +18,7 @@ conn.on("ReceiveEvent", (appEvent) =>
 
 document.getElementById("askForEvents").addEventListener("click", event => {
     const processId = document.getElementById("processId").value;
-    if (processId == undefined || processId == null)
+    if (processId === undefined || processId === null)
         processId = -1;
 
     conn.invoke("StartProcessMonitor", processId).catch(err => console.error(err.toString()));
